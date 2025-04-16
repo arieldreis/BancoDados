@@ -52,7 +52,7 @@ insert into cursos values
 
 /*TIPOS DE SELECT EM BANCO DE DADOS*/
 /*O select é muito usado para consulta de dados.*/
-
+/*PARTE 1*/
 select * from cursos;
 
 select * from cursos order by nome; 
