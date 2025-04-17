@@ -104,3 +104,25 @@ where ano in (2014, 2016) order by ano desc;
 select * from cursos
 where carga > 35 or totalaulas < 30; 
 -- Aqui ele mostra cursos com carga maior que 35 OU total de aulas menor que 30 (basta um dos dois!)
+/*´PARTE 2*/
+-- WILDCARDS
+-- operador like é de parecido
+-- '%' é nenhum ou vários caracteres
+select * from cursos
+where nome like '%a';
+
+select * from cursos
+where nome like 'P%' order by idcursos;
+
+select * from cursos
+where nome like '%A%' order by idcursos; -- Essa linha irá selecionar todas ás linhas que tenham a letra A em qualquer lugar.
+
+select * from cursos
+where nome not like '%A%';
+
+update cursos
+set nome = "Photoshop" where idcursos = '3';
+
+select * from cursos
+where nome  like 'ph%_';
+/*PARTE 3*/
