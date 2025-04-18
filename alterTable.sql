@@ -116,6 +116,13 @@ insert into dados (id, nome, profissao, nascimento, sexo, peso, altura, nacional
 (100, 'Stacey', 'Arquiteto', '1973-04-20', 'F', 95.05, 1.97, 'Índia');
 select * from gafanhotos order by nome;
 
+insert into dados values 
+(101, 'Ariel Marinho', 'Desenvolvedor', '2009-01-11', 'M', 94.13, 1.70, 'Brasil'),
+(102, 'Joana Silva', 'Médica', '1994-09-15', 'F', 67.8, 1.63, 'Brasil'),
+(103, 'João Silva', 'Técnico de Designer', '1999-09-18', 'M', 78.9, 1.87, 'Portugal'),
+(104, 'Carlos Pimentel', 'Administrador', '1996-11-12', 'M', 89.66, 1.89, 'Argentina'),
+(105, 'Jade Marinho', 'Veterinária', '1998-07-24', 'F', 71.22, 1.67, 'Brasil');
+
 create table if not exists cursos(
 	nome varchar(40) not null unique,
     descricao text,
