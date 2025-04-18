@@ -1,21 +1,7 @@
-use dados_alunos;
+/*Result set*/
+select * from cursos;
 
-create table if not exists cursos(
-	nome varchar(40) not null unique,
-    descricao text,
-    carga int unsigned,
-    totalaulas int,
-    ano year default '2016'
-) default charset = utf8;
-
-insert into cursos values
-("1", "HTML4", "Curso de HTML5", "40", "37", "2014"),
-("2", "Algoritimos", "Lógica de Programação", "20", "15", "2014"),
-("3", "Photoshop", "Dicas de Photoshop CC", "10", "8", "2014"),
-("4", "PGP", "Curso de PHP para iniciantes", "40", "20", "2010"),
-("5", "Jarva", "Introdução a linguagem Java", "10", "29", "2000"),
-("6", "MySql", "Banco de Dados", "30", "15", "2016"),
-("7", "Word", "Curso completo de Word", "40", "30", "2016"),
+insert into cursos values 
 ("8", "Design", "Curso de Design avançado", "30", "25", "2015"),
 ("9", "Python", "Curso de Python avançado", "40", "35", "2020"),
 ("10", "Excel", "Curso de Excel profissional", "20", "18", "2018"),
@@ -50,11 +36,8 @@ insert into cursos values
 ("39", "WordPress", "Curso de criação de sites com WordPress", "30", "27", "2018"),
 ("40", "Canva", "Curso de design com Canva", "10", "9", "2023");
 
-/*TIPOS DE SELECT EM BANCO DE DADOS*/
-/*O select é muito usado para consulta de dados.*/
-/*PARTE 1*/
 select * from cursos;
-
+/*PARTE 1*/
 select * from cursos order by nome; 
 -- Ordena todos os registros da tabela 'cursos' em ordem crescente pelo nome
 
@@ -104,7 +87,7 @@ where ano in (2014, 2016) order by ano desc;
 select * from cursos
 where carga > 35 or totalaulas < 30; 
 -- Aqui ele mostra cursos com carga maior que 35 OU total de aulas menor que 30 (basta um dos dois!)
-/*´PARTE 2*/
+/*PARTE 2*/
 -- WILDCARDS
 -- operador like é de parecido
 -- '%' é nenhum ou vários caracteres
@@ -125,4 +108,24 @@ set nome = "Photoshop" where idcursos = '3';
 
 select * from cursos
 where nome  like 'ph%_';
+
+select distinct carga from cursos order by carga;
+select count(*) from cursos where carga > 30; -- Essa linha irá contar quantos cursos tem o horario maior que 30 horas.
+select count(nome) from cursos; -- Irá contar quantos cursos tem
+select nome, max(carga) from cursos where ano = 2017; -- used to find the maximum value in a set of values
+select nome, min(carga) from cursos where ano = 2014;
+select distinct carga from cursos order by carga;
+select distinct totalaulas from cursos order by totalaulas;
+select sum(carga) from cursos; -- Irá fazer a soma de todas ás cargas horárias 
+select sum(totalaulas) from cursos; -- Irá fazer a soma do total de aulas.
+/*COMO FAZER MÉDIA ARITIMÉTICA EM MYSQL*/
+select avg(carga) from cursos;
+select avg(totalaulas) from cursos;
+-- TABELA DADOS
+select * from dados
+where nome like "%s%";
+
+select nacionalidade from dados; -- Aqui irá mostrar todos os países nas quais foram registrados
+select distinct nacionalidade from dados order by nacionalidade; -- Irá mostrar todos os países dos usuários porém só uma vez.
 /*PARTE 3*/
+
