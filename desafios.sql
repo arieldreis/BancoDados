@@ -13,9 +13,12 @@ select * from dados
 where nome like '%Silva' and nacionalidade != 'Brasil' and peso < 100;
 /*DESAFIO 6: QUAL É A MAIOR ALTURA ENTRE OS GAFANHOTOS HOMENS QUE MORAM NO BRASIL?*/
 select nome, sexo, max(altura), nacionalidade from dados
-where sexo = 'M' and nacionalidade = 'Brasil'; -- cocertar
+where sexo = 'M' and nacionalidade = 'Brasil'; -- REVISAR ESSE DESAFIO
 /*DESAFIO 7: QUAL É A MÉDIA DE PESO DOS GAFANHOTOS CADASTRADOS*/
 select avg(peso) from dados;
 /*DESAFIO 8: QUAL É O MENOR PESO ENTRE OS GAFANHOTOS MULHERES QUE NASCERAM FORA DO BRASIL E ENTRE 01/JAN/1990 Á 31/DEZ/1990? */
-
+select id, nome, profissao, nascimento, sexo, min(peso), altura, nacionalidade from dados
+where sexo = 'F' and nacionalidade != 'Brasil' and nascimento between '1990-01-01' and '2000-12-31';
 /*DESAFIO 9: QUANTAS GAFANHOTAS MULHERES TÊM MAIS DE 1.90M DE ALTURA*/
+select count(*) from dados
+where sexo = 'F' and altura > 1.90;
