@@ -22,3 +22,9 @@ where sexo = 'F' and nacionalidade != 'Brasil' and nascimento between '1990-01-0
 /*DESAFIO 9: QUANTAS GAFANHOTAS MULHERES TÊM MAIS DE 1.90M DE ALTURA*/
 select count(*) from dados
 where sexo = 'F' and altura > 1.90;
+/*DESAFIO 10: Uma lista com as profissões dos gafanhotos e seus respectivos quantitativos*/
+/*DESAFIO 11: Quantos gafanhotos homens e mulheres nasceram após 01/JAN/2005? */
+/*DESAFIO 12: Uma lista com os gafanhotos que nasceram fora do Brasil mostrando o país de origem
+e o total de pessoas nascidas lá. Só nos interessam os países que tiverem mais de 3 gafanhotos com essa nacionalidade*/
+/*DESAFIO 13: Uma lista agrupada pela altura dos gafanhotos, mostrando quantas pessoas pesam acima de 100kg
+e que estão acima da média de altura de todos cadastrados*/
