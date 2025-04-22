@@ -38,3 +38,8 @@ group by nacionalidade
 having count(nacionalidade) > 3;
 /*DESAFIO 13: Uma lista agrupada pela altura dos gafanhotos, mostrando quantas pessoas pesam acima de 100kg
 e que estão acima da média de altura de todos cadastrados*/
+select altura, count(*) from dados
+where peso > 100
+group by altura
+having altura > (select avg(altura) from dados);
+-- A média de altura é de 1.76m

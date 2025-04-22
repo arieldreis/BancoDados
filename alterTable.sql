@@ -123,6 +123,18 @@ insert into dados values
 (104, 'Carlos Pimentel', 'Administrador', '1996-11-12', 'M', 89.66, 1.89, 'Argentina'),
 (105, 'Jade Marinho', 'Veterinária', '1998-07-24', 'F', 71.22, 1.67, 'Brasil');
 
+insert into dados (id, nome, profissao, nascimento, sexo, peso, altura, nacionalidade) values
+(106, 'Ariel El-Sayed', 'Engenheiro Aeroespacial', '1992-03-05', 'M', 104.87, 1.78, 'Egito'),
+(107, 'Joana Torres', 'Arqueóloga', '1988-12-21', 'F', 112.4, 1.60, 'Guiana'),
+(108, 'João Fernández', 'Chef Internacional', '1990-06-30', 'M', 118.9, 1.85, 'El Salvador'),
+(109, 'Carlos Aït Benhaddou', 'Diplomata', '1985-04-19', 'M', 106.3, 1.83, 'Marrocos'),
+(110, 'Jade Ochoa', 'Bióloga Marinha', '1991-08-09', 'F', 109.75, 1.69, 'Guiana Francesa'),
+(111, 'Luna Rodríguez', 'Engenheira Ambiental', '1989-11-10', 'F', 107.6, 1.72, 'Uruguai'),
+(112, 'Nurlan Abdi', 'Cientista de Dados', '1987-02-14', 'M', 115.2, 1.80, 'Cazaquistão'),
+(113, 'Kiara Thompson', 'Fotógrafa de Natureza', '1993-05-23', 'F', 102.8, 1.68, 'Nova Zelândia'),
+(114, 'Bjorn Kristjansson', 'Geólogo', '1986-09-17', 'M', 110.3, 1.90, 'Islândia'),
+(115, 'Zanele Mokoena', 'Programadora de Jogos', '1995-07-01', 'F', 105.9, 1.75, 'África do Sul');
+
 create table if not exists cursos(
 	nome varchar(40) not null unique,
     descricao text,
