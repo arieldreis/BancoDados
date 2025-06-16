@@ -5,24 +5,30 @@ select * from cursos;
 
 /*Como alterar vários registros de uma vez só*/
 update dados
-set cursopreferido = case id
-	when 21 then '13'
-    when 22 then '41'
-    when 23 then '34'
-    when 24 then '15'
-    when 25 then '11'
-    when 26 then '1'
-    when 27 then '2'
-    when 28 then '29'
-    when 29 then '42'
-    when 30 then '14'
-    when 31 then '13'
-    when 32 then '7'
-end
-where id in (21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32);
+SET cursopreferido = CASE id
+    WHEN 111 THEN '23'
+    WHEN 112 THEN '42'
+    WHEN 113 THEN '10'
+    WHEN 114 THEN '5'
+    WHEN 115 THEN '16'
+END
+WHERE id IN (111, 112, 113, 114, 115);
 
 
-/*Como adicionar uma chave estrangeira usando o alter table*/
-alter table dados 
-add foreing key cursopreferido
-reference cursos(idcursos);
+/*Como juntar duas tabelas e afiltragem de dados*/
+select dados.id, dados.nome, cursos.nomecurso, cursos.ano
+from dados join cursos
+on cursos.idcursos = dados.cursopreferido
+order by dados.id;
+
+/*Apelidos de Colunas*/
+select db.id, db.nome, c.nomecurso, c.ano
+from dados as db join cursos as c
+on c.idcursos = db.cursopreferido
+order by db.id;
+
+/*Usando os joins e suas funções*/
+select db.id, db.nome, c.nomecurso, c.ano
+from dados as db left outer join cursos as c
+on c.idcursos = db.cursopreferido
+order by db.id;
