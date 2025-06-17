@@ -32,3 +32,29 @@ select db.id, db.nome, c.nomecurso, c.ano
 from dados as db left outer join cursos as c
 on c.idcursos = db.cursopreferido
 order by db.id;
+
+/*Criando a tabela de curso assistido pelo gafanhoto*/
+create table gafanhoto_assiste_curso(
+	id int not null auto_increment,
+    data_curso_assistido date,
+    id_dados int,
+    id_curso int,
+    primary key (id),
+    foreign key(id_dados) references dados(id),
+	foreign key(id_curso) references cursos(idcursos)
+)default charset = utf8;
+
+select * from gafanhoto_assiste_curso;
+
+select db.nome, id_curso from dados as db
+join gafanhoto_assiste_curso as gac
+on db.id = gac.id_dados
+order by db.nome;
+
+/*Usando os dados de uma terceira tabela*/
+select db.nome, c.nomecurso from dados as db
+join gafanhoto_assiste_curso as gac
+on db.id = gac.id_dados
+join cursos as c
+on c.idcursos = gac.id
+order by db.nome;
