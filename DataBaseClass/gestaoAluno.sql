@@ -24,3 +24,19 @@ create table if not exists matricula(
 )default charset = utf8;
 
 /*Acrescentando ás colunas na tabela */
+alter table alunos 
+add column idMatricula int;
+
+alter table alunos
+add column idCurso int;
+
+
+-- Adicionando chave estrangeira
+alter table alunos
+add foreign key(idMatricula) references matricula(idMatricula);
+
+alter table alunos 
+add foreign key(idCurso) references cursos(idCurso);
+
+select * from alunos;
+describe alunos;
