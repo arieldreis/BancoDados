@@ -52,3 +52,10 @@ drop column salario;
 
 drop table departamento;
 drop table funcionario;
+
+/*Join the tables*/
+
+select func.IdFuncionario, func.NomeCompleto, func.Funcao, dp.NomeDepto 
+from funcionario as func join departamento as dp
+on func.IdDepartamento = dp.IdDepartamento
+order by func.IdFuncionario;
